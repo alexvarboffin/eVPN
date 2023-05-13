@@ -1,0 +1,7 @@
+include ':app', ':vpnLib'
+
+//include ':vpnLib'
+//project(':vpnLib').projectDir = new File('...Cake-VPN\\vpnLib')
+
+include ':ui'
+project(':ui').projectDir = new File('D:\\walhalla\\sdk\\android\\UI\\ui')
