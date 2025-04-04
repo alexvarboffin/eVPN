@@ -1,11 +1,34 @@
 plugins {
     id 'com.android.application'
+    id 'com.google.gms.google-services'
+    id 'com.google.firebase.crashlytics'
+    id 'org.jetbrains.kotlin.android'
 }
 //apply plugin: 'com.android.application'
 
+
+def ONESIGNAL_APP_ID = rootProject.ONESIGNAL_APP_ID
+def version = 3779
+
 android {
-    compileSdk 33
-    buildToolsVersion '33.0.0'
+    namespace("ai.free.vpn.tweeqoldvpn.getvpn")
+
+    buildFeatures {
+        buildConfig true
+        viewBinding true
+    }
+
+    sourceSets {
+        main {
+            aidl.srcDirs = ['src/main/aidl']
+        }
+    }
+    dexOptions {
+        javaMaxHeapSize "8G"
+    }
+
+    compileSdk 34
+    buildToolsVersion '33.0.2'
 
     packagingOptions {
 //        pickFirst 'lib/arm64-v8a/libjbcrypto.so'
@@ -14,66 +37,114 @@ android {
 //        pickFirst 'lib/mips/libjbcrypto.so'
 //        pickFirst 'lib/x86/libjbcrypto.so'
 //        pickFirst 'lib/x86_64/libjbcrypto.so'
-
-
     }
 
 
     defaultConfig {
-        applicationId "com.abc.evpn"
-        minSdkVersion 19
-        //noinspection OldTargetApi
-        targetSdkVersion 33
-        versionCode 12
-        versionName "2.1"
+        applicationId "ai.free.vpn.tweeqoldvpn.getvpn"
+        minSdkVersion rootProject.minSdkVersion
+        targetSdkVersion rootProject.targetSdkVersion
+
+        versionCode version
+        versionName "1.3" + version
         multiDexEnabled true
+
+        //resConfigs "de", "fr", "it", "es", "ru", "pt", "zh-rCN", "el", "en", "ja", "zh-rTW", "ko", "ar"
+        //resConfigs "ar", "ko", "en"
+
     }
 
+    signingConfigs {
+        config {
+            keyAlias 'release'
+            keyPassword 'release'
+            storeFile file('keystore/keystore.jks')
+            storePassword 'release'
+        }
+    }
     buildTypes {
+        debug {
+            signingConfig signingConfigs.config
+            versionNameSuffix "-DEBUG"
+        }
 
         release {
+
             //signingConfig signingConfigs.release
             minifyEnabled true
+            shrinkResources true
+
+            debuggable false
+            jniDebuggable false
+            renderscriptDebuggable false
+            pseudoLocalesEnabled true
+//            applicationIdSuffix '.a'
+//            versionNameSuffix 'b'
+//            zipAlignEnabled true
+//             Enabling multidex support.
+
             //useProguard true  <-- remove this line
             proguardFiles getDefaultProguardFile('proguard-android.txt')
+            signingConfig signingConfigs.config
+            versionNameSuffix "-release"
         }
-        debug {
-            //signingConfig signingConfigs.debug
-        }
-
     }
 
     compileOptions {
-        targetCompatibility JavaVersion.VERSION_11
-        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_17
+        sourceCompatibility JavaVersion.VERSION_17
     }
 
-    flavorDimensions 'W'
+    flavorDimensions = ['implementation']
 
     productFlavors {
 
+        //old vpn lib
         ovpn3 {
-            applicationId "com.abc.evpn"
-            dimension 'W'
+            applicationId "ai.free.vpn.tweeqoldvpn.getvpn"
+            dimension 'implementation'
             //versionName = "a"
-//            project.ext.set("archivesBaseName", "a-" + defaultConfig.versionName)
-//
+            project.ext.set("archivesBaseName", "a-" + defaultConfig.versionName)
+//            resValue "string", "banner_ad_unit_id", banner_ad_unit_id
+//            resValue "string", "application_id", application_id
+            signingConfig signingConfigs.config
+        }
+
+        notovpn3 {
+            applicationId "ai.free.vpn.tweeqoldvpn.getvpn"
+            dimension 'implementation'
+            //versionName = "a"
+            project.ext.set("archivesBaseName", "a-" + defaultConfig.versionName)
+
 //            resValue "string", "banner_ad_unit_id", banner_ad_unit_id
 //            resValue "string", "application_id", application_id
 //            signingConfig signingConfigs.config_w
         }
 
-//        notovpn3 {
-//            applicationId "com.abc.evpn"
-//            dimension 'W'
+//        ui {
+//            applicationId "ai.free.vpn.tweeqoldvpn.getvpn"
+//            dimension 'implementation'
+//            buildConfigField("boolean", "openvpn3", "true")
 //            //versionName = "a"
-////            project.ext.set("archivesBaseName", "a-" + defaultConfig.versionName)
-////
+//            project.ext.set("archivesBaseName", "a-" + defaultConfig.versionName)
+////            resValue "string", "banner_ad_unit_id", banner_ad_unit_id
+////            resValue "string", "application_id", application_id
+//            signingConfig signingConfigs.config
+//        }
+//
+//        skeleton {
+//            applicationId "ai.free.vpn.tweeqoldvpn.getvpn"
+//            dimension 'implementation'
+//            //versionName = "a"
+//            project.ext.set("archivesBaseName", "a-" + defaultConfig.versionName)
+//            buildConfigField("boolean", "openvpn3", "false")
 ////            resValue "string", "banner_ad_unit_id", banner_ad_unit_id
 ////            resValue "string", "application_id", application_id
 ////            signingConfig signingConfigs.config_w
 //        }
     }
+
+
 }
 
 
@@ -87,6 +158,7 @@ dependencies {
 
     implementation "androidx.appcompat:appcompat:$rootProject.compatVersion"
     implementation "com.google.android.material:material:$rootProject.materialVersion"
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
 
     implementation "androidx.recyclerview:recyclerview:$rootProject.recyclerViewVersion"
     implementation "androidx.cardview:cardview:$rootProject.cardViewVersion"
@@ -95,27 +167,50 @@ dependencies {
     implementation 'com.daimajia.numberprogressbar:library:1.4@aar'
 
     //implementation 'com.amitshekhar.android:android-networking:0.2.0'
-    implementation 'com.amitshekhar.android:android-networking:1.0.2'
 
     implementation 'com.google.code.gson:gson:2.10.1'
     implementation 'com.caverock:androidsvg:1.4'
+    implementation 'com.google.firebase:firebase-database:20.2.2'
+    //Firebase Crashlytics
+    implementation "com.google.firebase:firebase-crashlytics:$rootProject.crashlyticsVersion"
+    implementation "com.google.firebase:firebase-analytics:$rootProject.analyticsVersion"
     testImplementation 'junit:junit:4.13.2'
-    implementation 'com.google.android.gms:play-services-ads:22.0.0'
+
     implementation files('libs/achartengine-1.2.0.jar')
+
+    //noinspection GradleDependency
     implementation 'com.afollestad.material-dialogs:core:0.9.6.0'
+
     implementation 'com.github.jakob-grabner:Circle-Progress-View:1.2.8'
-    implementation 'com.google.firebase:firebase-messaging:23.1.2'
+    implementation 'com.google.firebase:firebase-messaging:23.2.1'
     implementation 'com.github.bmarrdev:android-DecoView-charting:v1.2'
 
-    implementation project(':ui')
+    implementation project(':features:ui')
+    implementation project(':c')
+
+
+    //implementation project(':openvpn')//new
     implementation project(':vpnLib')
+
+    implementation project(':vpnapp')
+
+    implementation project(':threader')
+    implementation project(':features:wads')
 
     implementation "androidx.lifecycle:lifecycle-viewmodel:2.6.1"
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1"
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.21"
     implementation "androidx.multidex:multidex:2.0.1"
-
+    implementation 'com.amitshekhar.android:android-networking:1.0.2'
+    implementation 'androidx.preference:preference:1.2.1'
     //implementation 'de.blinkt:openvpn-core:2.9.33'
-}
+    //implementation 'de.blinkt.openvpn:openvpn-core:0.7.18'
 
-apply plugin: 'com.google.gms.google-services'
+    //    !!! auth !!!
+    implementation 'com.google.android.gms:play-services-auth:20.6.0'
+    implementation 'com.google.firebase:firebase-auth:22.1.1'
+    implementation 'com.firebaseui:firebase-ui-auth:8.0.2'
+    implementation 'com.google.android.gms:play-services-ads:22.2.0'
+    implementation 'com.github.invissvenska:NumberPickerPreference:1.0.4'
+    //implementation 'com.google.android.play:app-update:2.1.0'
+}

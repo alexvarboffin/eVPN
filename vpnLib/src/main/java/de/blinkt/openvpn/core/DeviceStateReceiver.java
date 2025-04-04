@@ -13,7 +13,7 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.NetworkInfo.State;
 import android.os.Handler;
-import android.preference.PreferenceManager;
+import androidx.preference.PreferenceManager;
 
 import de.blinkt.openvpn.R;
 import de.blinkt.openvpn.core.VpnStatus.ByteCountListener;

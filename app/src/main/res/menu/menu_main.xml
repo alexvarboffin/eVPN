@@ -2,24 +2,114 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.kusenko.myapplication.MainActivity">
-    <item
-        android:id="@+id/actionSpeed"
-        android:icon="@drawable/ic_speed"
-        android:orderInCategory="100"
-        android:title="@string/action_share"
-        app:showAsAction="always" />
+
+    <!--    <item-->
+    <!--        android:id="@+id/actionSpeed"-->
+    <!--        android:icon="@drawable/ic_speed"-->
+    <!--        android:orderInCategory="100"-->
+    <!--        android:title="@string/action_share"-->
+    <!--        app:showAsAction="always" />-->
+
+    <!--    <item-->
+    <!--        android:id="@+id/login_menu_item"-->
+    <!--        android:icon="@drawable/ic_login"-->
+    <!--        android:orderInCategory="100"-->
+    <!--        android:title="@string/action_refresh"-->
+    <!--        app:showAsAction="always" />-->
+
     <item
         android:id="@+id/actionCurrentServer"
         android:icon="@android:drawable/ic_menu_mylocation"
         android:orderInCategory="101"
         android:title="@string/action_current_connection"
         app:showAsAction="always" />
+
+
+    <!--    <item-->
+    <!--        android:id="@+id/profile"-->
+    <!--        android:icon="@drawable/ic_person"-->
+    <!--        android:orderInCategory="2"-->
+    <!--        android:title="@string/profile_menu_item"-->
+    <!--        app:showAsAction="always"-->
+    <!--        tools:ignore="AlwaysShowAction" />-->
+
+<!--    <item-->
+<!--        android:id="@+id/followingPosts"-->
+<!--        android:icon="@drawable/ic_following_posts"-->
+<!--        android:orderInCategory="2"-->
+<!--        android:title="@string/following_post_menu_item"-->
+<!--        app:showAsAction="always"-->
+<!--        tools:ignore="AlwaysShowAction" />-->
+
+    <!--    <item-->
+    <!--        android:id="@+id/search"-->
+    <!--        android:icon="@drawable/ic_search"-->
+    <!--        android:orderInCategory="1"-->
+    <!--        android:title="@string/search_menu_item"-->
+    <!--        app:showAsAction="ifRoom" />-->
+
     <item
-        android:id="@+id/action_settings"
-        android:icon="@drawable/ic_settings_white_24dp"
-        android:orderInCategory="101"
-        android:title="@string/action_settings"
-        app:showAsAction="always" />
+        android:id="@+id/menu_container"
+        android:icon="@drawable/ic_more_vert_black_24dp"
+        android:menuCategory="container"
+        android:title="@null"
+        app:showAsAction="always">
+        <menu>
+
+            <item
+                android:id="@+id/action_log_out"
+                android:icon="@drawable/ic_baseline_person_outline_24"
+                android:title="@string/action_log_out" />
+
+            <item
+                android:id="@+id/action_settings"
+                android:icon="@drawable/ic_settings"
+                android:title="@string/action_settings" />
+
+            <item
+                android:id="@+id/action_share_app"
+                android:icon="@drawable/ic_round_share_24"
+                android:title="@string/action_share_app" />
+
+            <!--            <item-->
+            <!--                android:id="@+id/action_discover_more_app"-->
+            <!--                android:icon="@drawable/ic_apps_black_24dp"-->
+            <!--                android:title="@string/action_discover_more_app" />-->
+            <item
+                android:id="@+id/action_about"
+                android:icon="@drawable/ic_info_outline_black_24dp"
+                android:title="@string/action_about" />
+            <item
+                android:id="@+id/action_privacy_policy"
+                android:icon="@drawable/ic_security_black_24dp"
+                android:title="@string/action_privacy_policy" />
 
 
+            <item
+                android:id="@+id/action_feedback"
+                android:icon="@drawable/ic_feedback_black_24dp"
+                android:title="@string/action_contact_us"
+                android:visible="false" />
+
+            <!--            <item-->
+            <!--                android:id="@+id/action_not_vibrate"-->
+            <!--                android:icon="@drawable/ic_bug_report_black_24dp"-->
+            <!--                android:title="@string/action_not_vibrate" />-->
+
+            <item
+                android:id="@+id/action_exit"
+                android:icon="@drawable/ic_exit_to_app_black_24dp"
+                android:title="@string/action_exit" />
+
+            <!--            <item-->
+            <!--                android:id="@+id/action_more_app_01"-->
+            <!--                android:icon="@drawable/ic_apps_black_24dp"-->
+            <!--                android:title="@string/action_more_app_01" />-->
+
+            <!--            <item-->
+            <!--                android:id="@+id/action_more_app_02"-->
+            <!--                android:icon="@drawable/ic_apps_black_24dp"-->
+            <!--                android:title="@string/action_more_app_02" />-->
+        </menu>
+    </item>
 </menu>

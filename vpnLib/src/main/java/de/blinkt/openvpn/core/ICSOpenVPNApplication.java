@@ -14,6 +14,7 @@ import android.graphics.Color;
 import android.os.Build;
 
 import android.os.StrictMode;
+
 import de.blinkt.openvpn.BuildConfig;
 import de.blinkt.openvpn.R;
 import de.blinkt.openvpn.api.AppRestrictions;

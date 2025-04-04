@@ -1,37 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
-    <PreferenceCategory
-        android:title="@string/automatic_switching_category">
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <PreferenceCategory android:title="@string/automatic_switching_category">
         <CheckBoxPreference
-            android:title="@string/automatic_switching"
             android:defaultValue="true"
+            android:key="automaticSwitching"
             android:summary="@string/automatic_switching_summary"
-            android:key="automaticSwitching"/>
-        <com.abc.evpn.util.NumberPickerPreference
-            android:dependency="automaticSwitching"
+            android:title="@string/automatic_switching" />
+
+
+        <nl.invissvenska.numberpickerpreference.NumberDialogPreference
+            android:defaultValue="40"
+            android:dependency="automaticSwitchingSeconds"
             android:key="automaticSwitchingSeconds"
             android:title="@string/automatic_switching_set_seconds"
-            android:defaultValue="40" />
+            app:numberPickerPreference_maxValue="60"
+            app:numberPickerPreference_minValue="10"
+            app:numberPickerPreference_stepValue="5"
+            app:numberPickerPreference_unitText=" s" />
+
     </PreferenceCategory>
-    <PreferenceCategory
-        android:title="@string/connect_on_start_category">
+
+    <PreferenceCategory android:title="@string/connect_on_start_category">
         <CheckBoxPreference
-            android:title="@string/connect_on_start"
             android:defaultValue="false"
+            android:key="connectOnStart"
             android:summary="@string/connect_on_start_summary"
-            android:key="connectOnStart"/>
+            android:title="@string/connect_on_start" />
     </PreferenceCategory>
     <PreferenceCategory
         android:key="countryPriorityCategory"
         android:title="@string/choose_country_priority_category">
         <CheckBoxPreference
-            android:title="@string/choose_country_priority"
             android:defaultValue="false"
+            android:key="countryPriority"
             android:summary="@string/choose_country_priority_summary"
-            android:key="countryPriority"/>
+            android:title="@string/choose_country_priority" />
         <ListPreference
             android:dependency="countryPriority"
-            android:title="@string/choose_country"
-            android:key="selectedCountry"/>
+            android:key="selectedCountry"
+            android:title="@string/choose_country" />
     </PreferenceCategory>
 </PreferenceScreen>

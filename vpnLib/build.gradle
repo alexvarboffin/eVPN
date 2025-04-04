@@ -1,15 +1,34 @@
 apply plugin: 'com.android.library'
 android {
-    compileSdkVersion 30
+    namespace("de.blinkt.openvpn")
+
+    compileSdk 35
+    buildToolsVersion rootProject.buildToolsVersion0
+
+    buildFeatures {
+        buildConfig true
+    }
+    ndkVersion = "25.1.8937393"
+    //ndkVersion = "25.2.9519653"
+
+    sourceSets {
+        main {
+            aidl.srcDirs = ['src/main/aidl']
+        }
+    }
 
     defaultConfig {
-        minSdkVersion 16
-        targetSdkVersion 30
+        minSdkVersion rootProject.minSdkVersion0
+        targetSdkVersion rootProject.targetSdkVersion0
         versionCode 1
         versionName "1.0"
 
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
 
+        externalNativeBuild {
+            cmake {
+            }
+        }
     }
     buildTypes {
         release {
@@ -18,16 +37,17 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
     }
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'androidx.localbroadcastmanager:localbroadcastmanager:1.0.0'
-    testImplementation 'junit:junit:4.13'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
-    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.localbroadcastmanager:localbroadcastmanager:1.1.0'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.2.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.6.1'
+    implementation 'androidx.appcompat:appcompat:1.7.0'
+    implementation 'androidx.preference:preference:1.2.1'
 }

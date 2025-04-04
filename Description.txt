@@ -1,0 +1,15 @@
+{
+  "rules": {
+    ".read": "auth != null",
+    ".write": "auth.uid !== null && auth.token.writer === true"
+  }
+}
+
++79592287622 no
++380722287622 work
+
+
+com.firebase.ui.auth.ui.phone.PhoneActivity fui_activity_register_phone
+
+
+5D:52:7A:81:8E:03:B0:89:9C:B3:06:FE:0B:D1:35:3F:5E:2C:7A:2C

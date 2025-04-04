@@ -23,16 +23,16 @@
     <style name="AppTheme2" parent="AppThemeBase" />
 
 
-    <style name="serverList" >
+    <style name="serverList">
         <item name="android:textSize">14sp</item>
     </style>
 
-    <style name="buttons" >
+    <style name="buttons">
         <item name="android:background">@drawable/button_bg</item>
         <item name="android:textColor">@color/buttonText</item>
     </style>
 
-    <style name="buttonsPopUp" >
+    <style name="buttonsPopUp">
         <item name="android:background">@drawable/button_bg</item>
         <item name="android:textColor">@color/buttonText</item>
         <item name="android:layout_gravity">center</item>
@@ -43,7 +43,6 @@
         <item name="android:minHeight">35dp</item>
         <item name="android:width">250dp</item>
     </style>
-
 
 
     <style name="AppTheme.NoActionBar">
@@ -59,9 +58,71 @@
 
     <style name="Splash" parent="AppTheme.NoActionBar.FullScreen">
         <item name="android:windowBackground">@android:color/white</item>
+        <item name="windowActionBar">false</item>
     </style>
 
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="button_start" parent="@style/Widget.AppCompat.Button">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">#ffffffff</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/button_start_rounded</item>
+        <item name="android:focusable">true</item>
+        <item name="android:clickable">true</item>
+        <item name="android:shadowColor">#ff000000</item>
+        <item name="android:shadowDx">0.0</item>
+        <item name="android:shadowDy">-1.0</item>
+        <item name="android:shadowRadius">0.2</item>
+        <item name="android:paddingLeft">35dp</item>
+        <item name="android:paddingRight">35dp</item>
+    </style>
+
+    <style name="AppTheme.AuthRB1" parent="Widget.AppCompat.CompoundButton.RadioButton">
+        <item name="android:paddingLeft">0dp</item>
+        <item name="android:paddingRight">0dp</item>
+
+        <item name="android:layout_marginLeft">0dp</item>
+        <item name="android:layout_marginRight">8dp</item>
+        <item name="android:layout_marginBottom">18dp</item>
+
+        <!--        <item name="android:textAllCaps">true</item>-->
+        <item name="android:textColor">#121111</item>
+    </style>
+
+    <!--    <style name="OnboardTitle" parent="Widget.AppCompat.TextView">-->
+    <!--        <item name="android:textColor">@android:color/white</item>-->
+    <!--        <item name="android:textSize">@dimen/slide_title_sp</item>-->
+    <!--        <item name="android:textStyle">bold</item>-->
+    <!--    </style>-->
+    <!--    <style name="OnboardDescription" parent="Widget.AppCompat.TextView">-->
+    <!--        <item name="android:textColor">@android:color/white</item>-->
+    <!--        <item name="android:textSize">@dimen/slide_desc_sp</item>-->
+    <!--        <item name="android:textAlignment">center</item>-->
+    <!--    </style>-->
+
+
+    <style name="OnboardTitle" parent="Widget.AppCompat.TextView">
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textSize">@dimen/slide_title_sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="OnboardDescription" parent="Widget.AppCompat.TextView">
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textSize">@dimen/slide_desc_sp</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="OnboardSkipBtn" parent="Widget.AppCompat.TextView">
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="OnboardNextBtn" parent="Widget.AppCompat.TextView">
+        <item name="android:textColor">@android:color/white</item>
+    </style>
 
 </resources>

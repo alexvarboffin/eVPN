@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    package="com.abc.evpn">
+    xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -10,37 +9,47 @@
     <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
 
     <application
-        android:name="com.abc.evpn.App"
+        android:name="ai.free.vpn.tweeqoldvpn.getvpn.App"
         android:allowBackup="true"
         android:extractNativeLibs="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:requestLegacyExternalStorage="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
-        tools:ignore="GoogleAppIndexingWarning,UnusedAttribute">
+        tools:ignore="GoogleAppIndexingWarning,UnusedAttribute"
+        tools:replace="android:extractNativeLibs, android:label, android:theme, android:name, android:icon, android:roundIcon">
+
 
         <activity
-            android:name="com.abc.evpn.activity.SplashActivity"
+            android:name="ai.free.vpn.tweeqoldvpn.getvpn.activity.SplashActivityVpn"
             android:exported="true"
-            android:noHistory="true"
-            android:theme="@style/Splash" />
-        <activity
-            android:exported="false"
-            android:name="com.abc.evpn.activity.MainActivity"
-            android:label="@string/app_name"
-            tools:ignore="RedundantLabel">
+            android:theme="@style/Splash">
 
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
-        <activity android:name="com.abc.evpn.activity.VPNListActivity" />
+
         <activity
-            android:name="com.abc.evpn.activity.VPNInfoActivity"
+            android:name="ai.free.vpn.tweeqoldvpn.getvpn.activity.main.MainActivity"
+            android:exported="true"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+
+        <activity android:name="ai.free.vpn.tweeqoldvpn.getvpn.activity.vpnlist.VPNListActivityVpnAuth" />
+        <activity
+            android:name="ai.free.vpn.tweeqoldvpn.getvpn.activity.vpninfo.VPNInfoActivityVpnAuth"
+            android:exported="true"
             android:launchMode="singleTop" />
         <activity
-            android:name="com.abc.evpn.activity.SettingsActivity"
+            android:name="ai.free.vpn.tweeqoldvpn.getvpn.activity.settings.SettingsActivity"
             android:label="@string/action_settings"
             android:noHistory="true" />
 
@@ -53,28 +62,25 @@
             </intent-filter>
         </service>
 
+        <!--        <activity-->
+        <!--            android:name="com.google.android.gms.ads.AdActivity"-->
+        <!--            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"-->
+        <!--            android:theme="@android:style/Theme.Translucent" />-->
+
         <activity
-            android:name="com.abc.evpn.activity.SpeedTestActivity"
-            android:label="eVPN Speed Test"
-            android:theme="@style/AppTheme2" />
-        <activity
-            android:name="com.abc.evpn.activity.TOSActivity"
-            android:theme="@style/AppTheme2" />
-        <activity
-            android:name="com.google.android.gms.ads.AdActivity"
-            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
-            android:theme="@android:style/Theme.Translucent" />
-        <activity
-            android:name=".activity.StepActivity"
+            android:name="ai.free.vpn.tweeqoldvpn.getvpn.activity.step.StepActivity"
             android:exported="true"
-            android:theme="@style/Splash">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            android:theme="@style/Splash" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+        <activity
+            android:name="ai.free.vpn.tweeqoldvpn.getvpn.activity.auth.ChooseLoginRegistrationActivity"
+            android:exported="true"
+            android:theme="@style/Splash" />
 
-        </activity>
+        <!--        <activity-->
+        <!--            android:name="ai.free.vpn.tweeqoldvpn.getvpn.activity.auth.RegistrationActivity"-->
+        <!--            android:exported="true"-->
+        <!--            android:theme="@style/AppTheme.Launcher" />-->
 
         <meta-data
             android:name="com.google.android.gms.version"
@@ -82,23 +88,34 @@
 
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="@string/admob_app_id" />
+            android:value="@string/app_id" />
 
         <service
-            android:name=".service.MyFirebaseMessagingService"
+            android:name="ai.free.vpn.tweeqoldvpn.getvpn.service.MyFirebaseMessagingService"
             android:exported="false">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
 
-        <service
-            android:name=".service.MyFirebaseInstanceIDService"
-            android:exported="true">
+        <!--        <service-->
+        <!--            android:name=".service.MyFirebaseInstanceIDService"-->
+        <!--            android:exported="true">-->
+        <!--            <intent-filter>-->
+        <!--                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />-->
+        <!--            </intent-filter>-->
+        <!--        </service>-->
+
+        <receiver
+            android:name=".receiver.InstallListener"
+            android:enabled="true"
+            android:exported="true"
+            tools:ignore="ExportedReceiver">
             <intent-filter>
-                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+                <action android:name="com.android.vending.INSTALL_REFERRER" />
             </intent-filter>
-        </service>
+        </receiver>
+
     </application>
 
 </manifest>

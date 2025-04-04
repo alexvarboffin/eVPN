@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!--    <Button-->
+    <!--        android:id="@+id/top_button"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:text="Верхняя кнопка" />-->
+
+    <!-- Контейнер для пользовательского макета -->
+    <FrameLayout
+        android:id="@+id/content_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <!-- Ваш пользовательский макет будет вставлен сюда -->
+
+    </FrameLayout>
+
+    <!--    android:animateLayoutChanges="true"-->
+
+    <FrameLayout
+        android:id="@+id/bottom_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#F6F3F3" />
+
+</LinearLayout>

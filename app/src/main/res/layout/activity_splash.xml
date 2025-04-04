@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-
     android:background="@color/colorPrimary"
-    tools:context="com.abc.evpn.activity.SplashActivity">
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="ai.free.vpn.tweeqoldvpn.getvpn.activity.SplashActivityVpn">
 
     <LinearLayout
         android:id="@+id/splashh"
@@ -24,9 +22,11 @@
         <ImageView
             android:id="@+id/splashImage"
             android:layout_width="120dp"
-            android:layout_height="120dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:adjustViewBounds="true"
             android:src="@mipmap/ic_launcher"
-            android:layout_gravity="center"/>
+            tools:ignore="ContentDescription" />
 
         <TextView
             android:id="@+id/splashTextt"
@@ -108,26 +108,27 @@
         tools:targetApi="lollipop" />
 
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/splash"
-        android:layout_centerHorizontal="true"
-        android:src="@drawable/logo_transparent" />
+    <!--    <ImageView-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_above="@+id/splash"-->
+    <!--        android:layout_centerHorizontal="true"-->
+    <!--        android:importantForAccessibility="no"-->
+    <!--        android:src="@drawable/logo_transparent" />-->
+
     <LinearLayout
         android:id="@+id/splash"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
-        android:orientation="vertical"
-        android:gravity="bottom">
+        android:layout_centerHorizontal="true"
+        android:gravity="bottom"
+        android:orientation="vertical">
 
         <TextView
-            android:id="@+id/splashText"
+            android:id="@+id/copyright"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
             android:layout_gravity="center"
             android:padding="10dp"
             android:text="@string/all_rights_reserved"
@@ -136,7 +137,6 @@
             android:textColor="#d3d1d1" />
 
     </LinearLayout>
-
 
 
 </RelativeLayout>

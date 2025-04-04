@@ -12,11 +12,13 @@ import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.os.Build;
-import android.preference.PreferenceManager;
+
 import android.security.KeyChain;
 import android.security.KeyChainException;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.preference.PreferenceManager;
+
 import android.text.TextUtils;
 import android.util.Base64;
 

@@ -633,12 +633,7 @@ public class OpenVPNService extends VpnService implements StateListener, Callbac
 
 
         /* start the OpenVPN process itself in a background thread */
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                startOpenVPN();
-            }
-        }).start();
+        new Thread(() -> startOpenVPN()).start();
 
 
         ProfileManager.setConnectedVpnProfile(this, mProfile);
