@@ -1,8 +1,8 @@
 plugins {
-    id 'com.android.application'
-    id 'com.google.gms.google-services'
-    id 'com.google.firebase.crashlytics'
-    id 'org.jetbrains.kotlin.android'
+    id("com.android.application")
+    id("com.google.gms.google-services")
+    id("com.google.firebase.crashlytics")
+    id("org.jetbrains.kotlin.android")
 }
 //apply plugin: 'com.android.application'
 
@@ -153,37 +153,37 @@ dependencies {
     //apply from: "D:/walhalla/sdk/android/ui/ui/versions.gradle"
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-//    implementation "androidx.appcompat:appcompat${compatVersion}:"
-//    implementation "com.google.android.material:material:${materialVersion}"
+//    implementation("androidx.appcompat:appcompat${compatVersion}:")
+//    implementation(libs.material)
 
-    implementation "androidx.appcompat:appcompat:$rootProject.compatVersion"
-    implementation "com.google.android.material:material:$rootProject.materialVersion"
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation("androidx.appcompat:appcompat:$rootProject.compatVersion")
+    implementation(libs.material)
+    implementation(libs.androidx.constraintlayout)
 
-    implementation "androidx.recyclerview:recyclerview:$rootProject.recyclerViewVersion"
-    implementation "androidx.cardview:cardview:$rootProject.cardViewVersion"
-    implementation "androidx.gridlayout:gridlayout:$rootProject.gridLayoutVersion"
+    implementation("androidx.recyclerview:recyclerview:$rootProject.recyclerViewVersion")
+    implementation("androidx.cardview:cardview:$rootProject.cardViewVersion")
+    implementation("androidx.gridlayout:gridlayout:$rootProject.gridLayoutVersion")
 
-    implementation 'com.daimajia.numberprogressbar:library:1.4@aar'
+    implementation("com.daimajia.numberprogressbar:library:1.4@aar")
 
-    //implementation 'com.amitshekhar.android:android-networking:0.2.0'
+    //implementation("com.amitshekhar.android:android-networking:0.2.0")
 
-    implementation 'com.google.code.gson:gson:2.10.1'
-    implementation 'com.caverock:androidsvg:1.4'
-    implementation 'com.google.firebase:firebase-database:20.2.2'
+    implementation("com.google.code.gson:gson:2.10.1")
+    implementation("com.caverock:androidsvg:1.4")
+    implementation("com.google.firebase:firebase-database:20.2.2")
     //Firebase Crashlytics
-    implementation "com.google.firebase:firebase-crashlytics:$rootProject.crashlyticsVersion"
-    implementation "com.google.firebase:firebase-analytics:$rootProject.analyticsVersion"
+    implementation("com.google.firebase:firebase-crashlytics:$rootProject.crashlyticsVersion")
+    implementation("com.google.firebase:firebase-analytics:$rootProject.analyticsVersion")
     testImplementation 'junit:junit:4.13.2'
 
     implementation files('libs/achartengine-1.2.0.jar')
 
     //noinspection GradleDependency
-    implementation 'com.afollestad.material-dialogs:core:0.9.6.0'
+    implementation("com.afollestad.material-dialogs:core:0.9.6.0")
 
-    implementation 'com.github.jakob-grabner:Circle-Progress-View:1.2.8'
-    implementation 'com.google.firebase:firebase-messaging:23.2.1'
-    implementation 'com.github.bmarrdev:android-DecoView-charting:v1.2'
+    implementation("com.github.jakob-grabner:Circle-Progress-View:1.2.8")
+    implementation("com.google.firebase:firebase-messaging:23.2.1")
+    implementation("com.github.bmarrdev:android-DecoView-charting:v1.2")
 
     implementation project(':features:ui')
     implementation project(':c')
@@ -197,20 +197,20 @@ dependencies {
     implementation project(':threader')
     implementation project(':features:wads')
 
-    implementation "androidx.lifecycle:lifecycle-viewmodel:2.6.1"
-    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1"
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.21"
-    implementation "androidx.multidex:multidex:2.0.1"
-    implementation 'com.amitshekhar.android:android-networking:1.0.2'
-    implementation 'androidx.preference:preference:1.2.1'
-    //implementation 'de.blinkt:openvpn-core:2.9.33'
-    //implementation 'de.blinkt.openvpn:openvpn-core:0.7.18'
+    implementation("androidx.lifecycle:lifecycle-viewmodel:2.6.1")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1")
+    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.21")
+    implementation("androidx.multidex:multidex:2.0.1")
+    implementation("com.amitshekhar.android:android-networking:1.0.2")
+    implementation("androidx.preference:preference:1.2.1")
+    //implementation("de.blinkt:openvpn-core:2.9.33")
+    //implementation("de.blinkt.openvpn:openvpn-core:0.7.18")
 
     //    !!! auth !!!
-    implementation 'com.google.android.gms:play-services-auth:20.6.0'
-    implementation 'com.google.firebase:firebase-auth:22.1.1'
-    implementation 'com.firebaseui:firebase-ui-auth:8.0.2'
-    implementation 'com.google.android.gms:play-services-ads:22.2.0'
-    implementation 'com.github.invissvenska:NumberPickerPreference:1.0.4'
-    //implementation 'com.google.android.play:app-update:2.1.0'
+    implementation("com.google.android.gms:play-services-auth:20.6.0")
+    implementation("com.google.firebase:firebase-auth:22.1.1")
+    implementation("com.firebaseui:firebase-ui-auth:8.0.2")
+    implementation("com.google.android.gms:play-services-ads:22.2.0")
+    implementation("com.github.invissvenska:NumberPickerPreference:1.0.4")
+    //implementation("com.google.android.play:app-update:2.1.0")
 }

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <padding
+                android:bottom="4dp"
+                android:left="0dp"
+                android:right="0dp" />
+            <solid android:color="@color/btn_start_rounded_pressed" />
+            <corners android:radius="50.0dip" />
+            <stroke
+                android:width="1.0dip"
+                android:color="@color/btn_start_rounded_pressed" />
+        </shape>
+    </item>
+
+    <item>
+        <shape android:shape="rectangle">
+            <padding
+                android:bottom="10dp"
+                android:top="10dp" />
+            <solid android:color="@color/btn_start_rounded_pressed" />
+            <corners android:radius="50.0dip" />
+            <stroke
+                android:width="4.0dip"
+                android:color="@color/btn_start_rounded_enabled_stroke" />
+        </shape>
+    </item>
+</layer-list>

@@ -1,0 +1,93 @@
+{
+  "project_info": {
+    "project_number": "677342482823",
+    "firebase_url": "https://vpntweeqold-default-rtdb.firebaseio.com",
+    "project_id": "vpntweeqold",
+    "storage_bucket": "vpntweeqold.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:677342482823:android:45927f9b36a9f78b8e4322",
+        "android_client_info": {
+          "package_name": "ai.free.vpn.tweeqoldvpn.getvpn"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "677342482823-janrlp810qr1qg5k2cc161kg7m1r2qqu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "ai.free.vpn.tweeqoldvpn.getvpn",
+            "certificate_hash": "5d527a818e03b0899cb306fe0bd1353f5e2c7a2c"
+          }
+        },
+        {
+          "client_id": "677342482823-vi87io4argv9sq765j2ak74gvj20k4gk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "ai.free.vpn.tweeqoldvpn.getvpn",
+            "certificate_hash": "dbd38ae9b84ea7939fc580c3e959d1e47571e667"
+          }
+        },
+        {
+          "client_id": "677342482823-ggrc53ld77l7m5keak9q31hdoitrsa60.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCaDkg29IGxboF2kyanvrEF7zSna0UH8X8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "677342482823-ggrc53ld77l7m5keak9q31hdoitrsa60.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:677342482823:android:29096169a4366f918e4322",
+        "android_client_info": {
+          "package_name": "com.walhalla.admin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "677342482823-7q78dmiukr3m5g5585hmup9elsddatl8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.walhalla.admin",
+            "certificate_hash": "dbd38ae9b84ea7939fc580c3e959d1e47571e667"
+          }
+        },
+        {
+          "client_id": "677342482823-ggrc53ld77l7m5keak9q31hdoitrsa60.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCaDkg29IGxboF2kyanvrEF7zSna0UH8X8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "677342482823-ggrc53ld77l7m5keak9q31hdoitrsa60.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

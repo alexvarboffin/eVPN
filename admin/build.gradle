@@ -1,0 +1,157 @@
+plugins {
+    id("com.android.application")
+    id("com.google.firebase.crashlytics")
+}
+//apply plugin: "com.android.application"
+
+
+//def ONESIGNAL_APP_ID = rootProject.ONESIGNAL_APP_ID
+def version = 3749
+
+android {
+
+    namespace("com.walhalla.admin")
+
+    dataBinding {
+        enabled true
+    }
+    dexOptions {
+        javaMaxHeapSize "8G"
+    }
+
+    compileSdk = 35
+    buildToolsVersion = "35.0.0"
+
+    packagingOptions {}
+
+
+    defaultConfig {
+        applicationId "com.walhalla.admin"
+        minSdkVersion rootProject.minSdkVersion
+        targetSdkVersion rootProject.targetSdkVersion
+
+        versionCode version
+        versionName "1.3" + version
+        multiDexEnabled true
+
+        resConfigs "en"
+    }
+
+    signingConfigs {
+        config {
+            keyAlias "release"
+            keyPassword "release"
+            storeFile file("D:\\new\\NEW\\BKP\\codecanyon\\evpn\\eVPN\\app\\keystore/keystore.jks")
+            storePassword "release"
+        }
+    }
+    buildTypes {
+        debug {
+            signingConfig signingConfigs.config
+        }
+
+        release {
+
+            //signingConfig signingConfigs.release
+            minifyEnabled true
+            shrinkResources true
+
+            debuggable false
+            jniDebuggable false
+            renderscriptDebuggable false
+            pseudoLocalesEnabled true
+//            applicationIdSuffix ".a"
+//            versionNameSuffix "b"
+//            zipAlignEnabled true
+//             Enabling multidex support.
+
+            //useProguard true  <-- remove this line
+            proguardFiles getDefaultProguardFile("proguard-android.txt")
+            signingConfig signingConfigs.config
+        }
+    }
+
+    compileOptions {
+        targetCompatibility JavaVersion.VERSION_17
+        sourceCompatibility JavaVersion.VERSION_17
+    }
+
+    flavorDimensions = ["W"]
+
+    productFlavors {
+
+        ovpn3 {
+            applicationId "com.walhalla.admin"
+            dimension "W"
+            //versionName = "a"
+//            project.ext.set("archivesBaseName", "a-" + defaultConfig.versionName)
+//
+//            resValue "string", "banner_ad_unit_id", banner_ad_unit_id
+//            resValue "string", "application_id", application_id
+            signingConfig signingConfigs.config
+        }
+    }
+}
+
+
+dependencies {
+
+    //apply from: "D:/walhalla/sdk/android/ui/ui/versions.gradle"
+
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+//    implementation("androidx.appcompat:appcompat${compatVersion}:")
+//    implementation(libs.material)
+
+    implementation("androidx.appcompat:appcompat:$rootProject.compatVersion")
+    implementation(libs.material)
+    implementation(libs.androidx.constraintlayout)
+
+    implementation("androidx.recyclerview:recyclerview:$rootProject.recyclerViewVersion")
+    implementation("androidx.cardview:cardview:$rootProject.cardViewVersion")
+    implementation("androidx.gridlayout:gridlayout:$rootProject.gridLayoutVersion")
+
+    implementation("com.daimajia.numberprogressbar:library:1.4@aar")
+
+    //implementation("com.amitshekhar.android:android-networking:0.2.0")
+
+
+    implementation(libs.gson)
+    implementation("com.caverock:androidsvg:1.4")
+    implementation("com.google.firebase:firebase-database:21.0.0")
+    //Firebase Crashlytics
+    implementation("com.google.firebase:firebase-crashlytics:$rootProject.crashlyticsVersion")
+    implementation("com.google.firebase:firebase-analytics:$rootProject.analyticsVersion")
+    testImplementation "junit:junit:4.13.2"
+
+    //implementation("com.google.android.gms:play-services-ads:22.1.0")
+
+    implementation files("libs/achartengine-1.2.0.jar")
+
+    //noinspection GradleDependency
+    implementation("com.afollestad.material-dialogs:core:0.9.6.0")
+
+    implementation("com.github.jakob-grabner:Circle-Progress-View:1.2.8")
+    implementation(libs.firebase.messaging)
+    implementation("com.github.bmarrdev:android-DecoView-charting:v1.2")
+
+    implementation project(":features:ui")
+    //implementation project(":corelib")
+    implementation project(":vpnapp")
+
+    implementation(libs.lifecycle.viewmodel)
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
+    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.21")
+    implementation(libs.androidx.multidex)
+    implementation("com.amitshekhar.android:android-networking:1.0.2")
+    implementation(libs.androidx.preference.ktx)
+    //implementation("de.blinkt:openvpn-core:2.9.33")
+    //implementation("de.blinkt.openvpn:openvpn-core:0.7.18")
+
+    //    !!! auth !!!
+    implementation("com.google.android.gms:play-services-auth:20.6.0")
+    implementation("com.google.firebase:firebase-auth:22.1.1")
+    implementation("com.firebaseui:firebase-ui-auth:8.0.2")
+
+}
+
+apply plugin: "com.google.gms.google-services"

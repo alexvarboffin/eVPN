@@ -1,0 +1,170 @@
+<resources>
+
+
+    <string name="menu_item_home">Подключиться</string>
+    <string name="menu_item_tos">TOS</string>
+    <string name="menu_item_test">Тест</string>
+    <string name="begin_test">Begin Test</string>
+    <string name="tap_to_connect">TAP TO CONNECT</string>
+    <string name="country_name">Country Name</string>
+
+    <string name="mainText">Ваша цифровая крепость! Доверьте Tweeqold VPN защиту вашей онлайн-активности, превратив ваш виртуальный мир в безопасную гавань.</string>
+
+    <string name="next">ДАЛЕЕ</string>
+    <string name="skip">ПРОПУСТИТЬ</string>
+    <string name="start">ПОНЯЛ</string>
+
+    <string name="action_settings">Настройки</string>
+    <string name="home_btn_choose_country">Выбрать страну</string>
+    <string name="home_pop_up_title_choose_country">Выберите страну</string>
+    <string name="server_btn_connect">НАЖМИТЕ ДЛЯ ПОДКЛЮЧЕНИЯ</string>
+    <string name="server_btn_disconnect">Отключиться</string>
+    <string name="server_error_loading_profile">Ошибка загрузки профиля</string>
+    <string name="server_txt_status">Статус подключения:</string>
+    <string name="server_not_connected">VPN не подключен</string>
+    <string name="loading_text">Загрузка…</string>
+    <string name="downloading_csv_text">Получение свободных серверов…</string>
+    <string name="parsing_csv_text">Анализ свободных серверов…</string>
+    <string name="csv_file_error">Проблема с чтением файла…</string>
+    <string name="csv_file_error_parsing">Проблема с анализом файла…</string>
+    <string name="network_error">Ошибка сети…</string>
+    <string name="successfully_loaded">Перенаправление…</string>
+    <string name="action_share">Поделиться</string>
+    <string name="ok">ОК</string>
+    <string name="network_error_message">Отсутствует подключение к интернету. Переподключитесь и попробуйте снова.</string>
+    <string name="action_current_connection">Текущее подключение</string>
+    <string name="random_connection">Быстрое подключение</string>
+    <string name="total_servers">%1$d</string>
+    <string name="loading_additional_servers">Загрузка дополнительных серверов</string>
+    <string name="connect_on_start">Подключаться при запуске</string>
+    <string name="connect_on_start_summary">Подключаться при запуске приложения</string>
+    <string name="choose_country_priority">Приоритет выбора страны</string>
+    <string name="choose_country_priority_summary">Если не включено, используется случайное подключение</string>
+    <string name="choose_country">Выберите страну</string>
+    <string name="error_random_country">Сервер с приоритетной страной %1$s недоступен</string>
+    <string name="success_pop_up_title"><b>Успешное подключение!\nДавайте попробуем?</b></string>
+    <string name="open_playmarket">Открыть PlayMarket</string>
+
+    <string name="choose_country_priority_category">Приоритет страны</string>
+    <string name="connect_on_start_category">Автозапуск при включении</string>
+    <string name="try_another_server_text">Хотите попробовать другой сервер?</string>
+    <string name="try_another_server_ok">Да</string>
+    <string name="try_another_server_no">Нет</string>
+    <string name="traffic_in">Загружено: %1$s</string>
+    <string name="traffic_out">Отправлено: %1$s</string>
+    <string name="traffic_totally"><b>Всего через приложение</b></string>
+    <string name="unknown_state">Неизвестное состояние</string>
+    <string name="state_user_vpn_permission">Ожидание разрешения пользователя на использование API VPN</string>
+    <string name="no_vpn_support_image">Извините, ваше изображение не поддерживает API VPNService :(</string>
+    <string name="cancel_connection">Отключить</string>
+    <string name="last_eVPN_tun_config">Открытие интерфейса tun:</string>
+    <string name="opentun_no_ipaddr">Отказ от открытия устройства tun без IP-информации</string>
+    <string name="route_rejected">Маршрут отклонен Android</string>
+    <string name="dns_server_info">DNS-сервер: %1$s, Домен: %2$s</string>
+    <string name="routes_info_excl">Исключенные маршруты: %1$s %2$s</string>
+    <string name="tun_open_error">Не удалось открыть интерфейс tun</string>
+    <string name="tun_error_helpful">На некоторых кастомных образах ICS разрешение на /dev/tun может быть неверным, или модуль tun может быть полностью отсутствующим. Для образов CM9 попробуйте включить опцию "Исправить владение" в общих настройках</string>
+    <string name="route_not_netip">Исправлен маршрут %1$s/%2$s на %3$s/%2$s</string>
+    <string name="keychain_access">Не удалось получить доступ к сертификатам Android Keychain. Это может быть вызвано обновлением прошивки или восстановлением резервной копии приложения/настроек приложения. Пожалуйста, отредактируйте VPN и повторно выберите сертификат в основных настройках, чтобы создать разрешение на доступ к сертификату.</string>
+    <string name="no_keystore_cert_selected">Вы должны выбрать пользовательский сертификат</string>
+    <string name="custom_route_format_error">Ошибка разбора пользовательских маршрутов</string>
+    <string name="no_error_found">Ошибок не найдено</string>
+    <string name="local_ip_info">Локальный IPv4: %1$s/%2$d IPv6: %3$s MTU: %4$d</string>
+    <string name="routes_info_incl">Маршруты: %1$s %2$s</string>
+    <string name="routes_debug">Установленные маршруты VpnService: %1$s %2$s</string>
+
+    <string name="route_not_cidr">Не удалось обработать %1$s и %2$s как IP-маршрут с сетевой маской CIDR, используется /32 в качестве маски сети.</string>
+    <string name="ip_not_cidr">Информация об интерфейсе %1$s и %2$s, вероятно, второй адрес является адресом пира удаленного хоста. Используется /32 маска сети для локального IP. Режим, указанный eVPN, - \"%3$s\".</string>
+    <string name="ipv4_format_error">Ошибка разбора IPv4-адреса</string>
+    <string name="pkcs12_file_encryption_key">Ключ шифрования файла PKCS12</string>
+    <string name="private_key_password">Пароль от закрытого ключа</string>
+    <string name="password">Пароль</string>
+    <string name="building_configration">Построение конфигурации…</string>
+    <string name="netstatus">Состояние сети: %s</string>
+    <string name="keychain_nocacert">Не удалось получить сертификат CA при чтении из хранилища ключей Android. Аутентификация, вероятно, завершится неудачно.</string>
+    <string name="mobile_info">%10$s %9$s работает на %3$s %1$s (%2$s), Android %6$s (%7$s) API %4$d, ABI %5$s, (%8$s)</string>
+    <string name="error_rsa_sign">Ошибка подписи с использованием ключа из хранилища ключей Android %1$s: %2$s</string>
+    <string name="warn_no_dns">Не используются DNS-серверы. Возможны проблемы с разрешением имен. Рассмотрите возможность установки пользовательских DNS-серверов. Также обратите внимание, что Android продолжит использовать настройки прокси, указанные для вашего мобильного/Wi-Fi-подключения, когда не установлены DNS-серверы.</string>
+    <string name="dns_add_error">Не удалось добавить DNS-сервер \"%1$s\", отклонено системой: %2$s</string>
+    <string name="ip_add_error">Не удалось настроить IP-адрес \"%1$s\", отклонено системой: %2$s</string>
+    <string name="getproxy_error">Ошибка получения настроек прокси: %s</string>
+    <string name="using_proxy">Используется прокси %1$s %2$d</string>
+    <string name="session_ipv4string">%1$s - %2$s</string>
+    <string name="session_ipv6string">%1$s - %3$s, %2$s</string>
+    <string name="minidump_generated">Tweeqold VPN неожиданно завершил работу. Рассмотрите возможность использования опции отправки мин
+
+идампа в главном меню</string>
+    <string name="state_connecting">Подключение</string>
+    <string name="state_wait">Ожидание ответа сервера</string>
+    <string name="state_auth">Аутентификация</string>
+    <string name="state_get_config">Получение конфигурации клиента</string>
+    <string name="state_assign_ip">Назначение IP-адресов</string>
+    <string name="state_add_routes">Добавление маршрутов</string>
+    <string name="state_connected">Подключено</string>
+    <string name="state_disconnected">Отключено</string>
+    <string name="state_reconnecting">Переподключение</string>
+    <string name="state_exiting">Завершение</string>
+    <string name="state_noprocess">Не запущено</string>
+    <string name="state_resolve">Разрешение имен хостов</string>
+    <string name="state_tcp_connect">Подключение (TCP)</string>
+    <string name="state_auth_failed">Ошибка аутентификации</string>
+    <string name="state_nonetwork">Ожидание работоспособной сети</string>
+    <string name="statusline_bytecount">↓%2$s/сек %1$s - ↑%4$s/сек %3$s</string>
+    <string name="notifcation_title_notconnect">VPN не подключен</string>
+    <string name="jelly_keystore_alphanumeric_bug">Некоторые версии Android 4.1 имеют проблемы, если имя сертификата хранилища содержит неалфавитно-цифровые символы (такие как пробелы, подчеркивания или тире). Попробуйте повторно импортировать сертификат без специальных символов</string>
+    <string name="built_by">создано %s</string>
+    <string name="debug_build">отладочная версия</string>
+    <string name="official_build">официальная версия</string>
+    <string name="screenoff_pause">Приостановка подключения в состоянии отключенного экрана: менее %1$s за %2$s сек.</string>
+    <string name="screen_nopersistenttun">Внимание: Не включена постоянная настройка tun для этого VPN. Трафик будет использовать обычное интернет-подключение, когда экран будет отключен.</string>
+    <string name="pauseVPN">Приостановить VPN</string>
+    <string name="resumevpn">Возобновить VPN</string>
+    <string name="state_userpause">Приостановка VPN по запросу пользователя</string>
+    <string name="state_screenoff">VPN приостановлено - экран выключен</string>
+    <string name="cannotparsecert">Не удалось отобразить информацию о сертификате</string>
+    <string name="keyChainAccessError">Ошибка доступа к хранилищу ключей: %s</string>
+    <string name="unhandled_exception">Необработанное исключение: %1$s\n\n%2$s</string>
+    <string name="unhandled_exception_context">%3$s: %1$s\n\n%2$s</string>
+    <string name="ip_looks_like_subnet">Указана топология VPN \"%3$s\", но ifconfig %1$s %2$s больше похож на IP-адрес с сетевой маской. Предполагается топология \"subnet\".</string>
+    <string name="allowed_vpn_apps_info">Разрешенные VPN-приложения: %1$s</string>
+    <string name="disallowed_vpn_apps_info">Запрещенные VPN-приложения: %1$s</string>
+    <string name="app_no_longer_exists">Пакет %s больше не установлен, удаляется из списка разрешенных/запрещенных приложений</string>
+    <string name="remote_no_server_selected">Вы должны выбрать и включить хотя бы один удаленный сервер.</string>
+    <string name="ignore_multicast_route">Игнорируется маршрут для многоадресной рассылки: %s</string>
+    <string name="service_restarted">Перезапуск службы eVPN (Вероятно, приложение было аварийно завершено или остановлено из-за нехватки памяти)</string>
+    <string name="no_allowed_app">Не добавлено разрешенных приложений. Добавление себя (%s), чтобы иметь хотя бы одно приложение в списке разрешенных приложений и не разрешать все приложения</string>
+    <string name="abi_mismatch">Предпочтительный порядок нативного ABI для этого устройства (%1$s) и ABI, указанного нативными библиотеками (%2$s), несовместимы</string>
+    <string name="months_left">%d месяцев осталось</string>
+    <string name="days_left">%d дней осталось</string>
+    <string name="hours_left">%d часов осталось</string>
+    <string name="permission_revoked">Разрешение на VPN отозвано ОС (например, запущена другая программа VPN), остановка VPN</string>
+    <string name="missing_tlsauth">Отсутствует файл tls-auth</string>
+    <string name="missing_certificates">Отсутствует пользовательский сертификат или файл ключа пользовательского сертификата</string>
+    <string name="missing_ca_certificate">Отсутствует сертификат CA</string>
+    <string name="reread_log">Перечитано (%d) записей журнала из файла кэша журнала</string>
+    <string name="state_waitconnectretry">Ожидание %s секунд между попытками подключения</string>
+
+    <string name="quick_connect">Быстрое подключение</string>
+<!--    <string name="free">Бесплатно</string>-->
+
+    <string name="servers">Серверы</string>
+    <string name="no_vpn_connected">VPN не подключен</string>
+    <string name="open_browser">Открыть браузер</string>
+    <string name="show_my_desktop">Показать мой рабочий стол</string>
+    <string name="stay_to_try_something_else">Оставаться и попробовать что-то другое</string>
+    <string name="automatic_switching">Автоматическое переключение</string>
+    <string name="automatic_switching_category">Автоматическое переключение</string>
+    <string name="automatic_switching_set_seconds">Установить секунды</string>
+    <string name="automatic_switching_summary">Автоматическое переключение на сервер в той же стране через несколько секунд, если подключение невозможно.</string>
+
+
+    <string name="onboard_3_title">ОБЕЗОПАСЬТЕ СЕБЯ</string>
+    <string name="onboard_3_description">Вы можете просматривать Интернет самым безопасным образом. С полным шифрованием данных мы позволяем вам анонимно просматривать Интернет и защищать вашу личную информацию.</string>
+
+    <string name="onboard_2_title">ОНЛАЙН СВОБОДА</string>
+    <string name="onboard_2_description">Обходите цензуру и получайте неограниченный доступ ко всем вашим любимым веб-сайтам и приложениям без страха быть под наблюдением кем-то.</string>
+
+    <string name="onboard_1_title">КОНФИДЕНЦИАЛЬНОСТЬ и БЕЗОПАСНОСТЬ</string>
+    <string name="onboard_1_description">Использование бесплатного Wi-Fi и открытых соединений подвергает вашу информацию риску. Мы защитим вашу чувствительную информацию от хакеров и интернет-провайдеров.</string>
+
+</resources>
