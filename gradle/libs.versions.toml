@@ -2,11 +2,14 @@
 compileSdk = "35"
 buildTools = "35.0.0"
 dropboxCoreSdk = "3.1.5"
+firebaseAuth = "23.2.0"
+firebaseUiAuth = "8.0.2"
 flexbox = "2.0.1"
 glide = "4.16.0"
 lifecycleViewmodel = "2.8.7"
 materialIconsExtendedAndroid = "1.7.8"
 minSdk = "24"
+playServicesAuth = "21.3.0"
 targetSdk = "35"
 accompanistSwiperefresh = "0.32.0"
 
@@ -81,9 +84,9 @@ legacySupportV4 = "1.0.0"
 logback = "1.5.16"
 lottie = "6.6.2"
 multidex = "2.0.1"
-navigationFragment = "2.8.8"
+navigationFragment = "2.8.9"
 oopsnointernet = "2.0.0"
-playServicesAds = "24.0.0"
+playServicesAds = "24.1.0"
 precompose = "1.7.0-alpha03"
 pulsator4droid = "1.0.3"
 push = "4.0.0"
@@ -122,6 +125,8 @@ androidx-lifecycle-viewmodel = { version.ref = "androidx-lifecycle", group = "or
 androidx-lifecycle-viewmodel-ktx = { version.ref = "lifecycleViewmodelKtx", module = "androidx.lifecycle:lifecycle-viewmodel-ktx"}
 androidx-material-icons-extended-android = { module = "androidx.compose.material:material-icons-extended-android", version.ref = "materialIconsExtendedAndroid" }
 dropbox-core-sdk = { module = "com.dropbox.core:dropbox-core-sdk", version.ref = "dropboxCoreSdk" }
+firebase-auth = { module = "com.google.firebase:firebase-auth", version.ref = "firebaseAuth" }
+firebase-ui-auth = { module = "com.firebaseui:firebase-ui-auth", version.ref = "firebaseUiAuth" }
 flexbox = { module = "com.google.android:flexbox", version.ref = "flexbox" }
 glide = { module = "com.github.bumptech.glide:glide", version.ref = "glide" }
 lifecycle-viewmodel = { module = "androidx.lifecycle:lifecycle-viewmodel", version.ref = "lifecycleViewmodel" }
@@ -173,6 +178,7 @@ okhttp = { version.ref = "okhttp", module = "com.squareup.okhttp3:okhttp"}
 onesignal = { version.ref = "onesignal", module = "com.onesignal:OneSignal"}
 oopsnointernet = { version.ref = "oopsnointernet", module = "org.imaginativeworld.oopsnointernet:oopsnointernet"}
 play-services-ads = { version.ref = "playServicesAds", group = "com.google.android.gms", name = "play-services-ads"}
+play-services-auth = { module = "com.google.android.gms:play-services-auth", version.ref = "playServicesAuth" }
 precompose = { version.ref = "precompose", module = "moe.tlaster:precompose"}
 precompose-koin = { version.ref = "precompose", module = "moe.tlaster:precompose-koin"}
 precompose-viewmodel = { version.ref = "precompose", module = "moe.tlaster:precompose-viewmodel"}

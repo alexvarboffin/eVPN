@@ -4,10 +4,10 @@ plugins {
     id("com.google.firebase.crashlytics")
     id("org.jetbrains.kotlin.android")
 }
-//apply plugin: 'com.android.application'
+//apply plugin: "com.android.application"
 
 
-def ONESIGNAL_APP_ID = rootProject.ONESIGNAL_APP_ID
+//def ONESIGNAL_APP_ID = rootProject.ONESIGNAL_APP_ID
 def version = 3779
 
 android {
@@ -20,7 +20,7 @@ android {
 
     sourceSets {
         main {
-            aidl.srcDirs = ['src/main/aidl']
+            aidl.srcDirs = ["src/main/aidl"]
         }
     }
     dexOptions {
@@ -28,22 +28,22 @@ android {
     }
 
     compileSdk 34
-    buildToolsVersion '33.0.2'
+    buildToolsVersion "33.0.2"
 
     packagingOptions {
-//        pickFirst 'lib/arm64-v8a/libjbcrypto.so'
-//        pickFirst 'lib/armeabi/libjbcrypto.so'
-//        pickFirst 'lib/armeabi-v7a/libjbcrypto.so'
-//        pickFirst 'lib/mips/libjbcrypto.so'
-//        pickFirst 'lib/x86/libjbcrypto.so'
-//        pickFirst 'lib/x86_64/libjbcrypto.so'
+//        pickFirst "lib/arm64-v8a/libjbcrypto.so"
+//        pickFirst "lib/armeabi/libjbcrypto.so"
+//        pickFirst "lib/armeabi-v7a/libjbcrypto.so"
+//        pickFirst "lib/mips/libjbcrypto.so"
+//        pickFirst "lib/x86/libjbcrypto.so"
+//        pickFirst "lib/x86_64/libjbcrypto.so"
     }
 
 
     defaultConfig {
         applicationId "ai.free.vpn.tweeqoldvpn.getvpn"
-        minSdkVersion rootProject.minSdkVersion
-        targetSdkVersion rootProject.targetSdkVersion
+        minSdkVersion 21
+        targetSdkVersion 35
 
         versionCode version
         versionName "1.3" + version
@@ -56,10 +56,10 @@ android {
 
     signingConfigs {
         config {
-            keyAlias 'release'
-            keyPassword 'release'
-            storeFile file('keystore/keystore.jks')
-            storePassword 'release'
+            keyAlias "release"
+            keyPassword "release"
+            storeFile file("keystore/keystore.jks")
+            storePassword "release"
         }
     }
     buildTypes {
@@ -78,13 +78,13 @@ android {
             jniDebuggable false
             renderscriptDebuggable false
             pseudoLocalesEnabled true
-//            applicationIdSuffix '.a'
-//            versionNameSuffix 'b'
+//            applicationIdSuffix ".a"
+//            versionNameSuffix "b"
 //            zipAlignEnabled true
 //             Enabling multidex support.
 
             //useProguard true  <-- remove this line
-            proguardFiles getDefaultProguardFile('proguard-android.txt')
+            proguardFiles getDefaultProguardFile("proguard-android.txt")
             signingConfig signingConfigs.config
             versionNameSuffix "-release"
         }
@@ -95,14 +95,14 @@ android {
         sourceCompatibility JavaVersion.VERSION_17
     }
 
-    flavorDimensions = ['implementation']
+    flavorDimensions = ["implementation"]
 
     productFlavors {
 
         //old vpn lib
         ovpn3 {
             applicationId "ai.free.vpn.tweeqoldvpn.getvpn"
-            dimension 'implementation'
+            dimension "implementation"
             //versionName = "a"
             project.ext.set("archivesBaseName", "a-" + defaultConfig.versionName)
 //            resValue "string", "banner_ad_unit_id", banner_ad_unit_id
@@ -112,7 +112,7 @@ android {
 
         notovpn3 {
             applicationId "ai.free.vpn.tweeqoldvpn.getvpn"
-            dimension 'implementation'
+            dimension "implementation"
             //versionName = "a"
             project.ext.set("archivesBaseName", "a-" + defaultConfig.versionName)
 
@@ -123,7 +123,7 @@ android {
 
 //        ui {
 //            applicationId "ai.free.vpn.tweeqoldvpn.getvpn"
-//            dimension 'implementation'
+//            dimension "implementation"
 //            buildConfigField("boolean", "openvpn3", "true")
 //            //versionName = "a"
 //            project.ext.set("archivesBaseName", "a-" + defaultConfig.versionName)
@@ -134,7 +134,7 @@ android {
 //
 //        skeleton {
 //            applicationId "ai.free.vpn.tweeqoldvpn.getvpn"
-//            dimension 'implementation'
+//            dimension "implementation"
 //            //versionName = "a"
 //            project.ext.set("archivesBaseName", "a-" + defaultConfig.versionName)
 //            buildConfigField("boolean", "openvpn3", "false")
@@ -152,7 +152,7 @@ dependencies {
 
     //apply from: "D:/walhalla/sdk/android/ui/ui/versions.gradle"
 
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(dir: "libs", include: ["*.jar"])
 //    implementation("androidx.appcompat:appcompat${compatVersion}:")
 //    implementation(libs.material)
 
@@ -168,15 +168,15 @@ dependencies {
 
     //implementation("com.amitshekhar.android:android-networking:0.2.0")
 
-    implementation("com.google.code.gson:gson:2.10.1")
+    implementation(libs.gson)
     implementation("com.caverock:androidsvg:1.4")
     implementation("com.google.firebase:firebase-database:20.2.2")
     //Firebase Crashlytics
     implementation("com.google.firebase:firebase-crashlytics:$rootProject.crashlyticsVersion")
     implementation("com.google.firebase:firebase-analytics:$rootProject.analyticsVersion")
-    testImplementation 'junit:junit:4.13.2'
+    testImplementation "junit:junit:4.13.2"
 
-    implementation files('libs/achartengine-1.2.0.jar')
+    implementation files("libs/achartengine-1.2.0.jar")
 
     //noinspection GradleDependency
     implementation("com.afollestad.material-dialogs:core:0.9.6.0")
@@ -185,32 +185,32 @@ dependencies {
     implementation("com.google.firebase:firebase-messaging:23.2.1")
     implementation("com.github.bmarrdev:android-DecoView-charting:v1.2")
 
-    implementation project(':features:ui')
-    implementation project(':c')
+    implementation project(":features:ui")
+    implementation project(":c")
 
 
-    //implementation project(':openvpn')//new
-    implementation project(':vpnLib')
+    //implementation project(":openvpn")//new
+    implementation project(":vpnLib")
 
-    implementation project(':vpnapp')
+    implementation project(":vpnapp")
 
-    implementation project(':threader')
-    implementation project(':features:wads')
+    implementation project(":threader")
+    implementation project(":features:wads")
 
-    implementation("androidx.lifecycle:lifecycle-viewmodel:2.6.1")
-    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1")
+    implementation(libs.lifecycle.viewmodel)
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.21")
-    implementation("androidx.multidex:multidex:2.0.1")
+    implementation(libs.androidx.multidex)
     implementation("com.amitshekhar.android:android-networking:1.0.2")
-    implementation("androidx.preference:preference:1.2.1")
+    implementation(libs.androidx.preference.ktx)
     //implementation("de.blinkt:openvpn-core:2.9.33")
     //implementation("de.blinkt.openvpn:openvpn-core:0.7.18")
 
     //    !!! auth !!!
-    implementation("com.google.android.gms:play-services-auth:20.6.0")
-    implementation("com.google.firebase:firebase-auth:22.1.1")
-    implementation("com.firebaseui:firebase-ui-auth:8.0.2")
-    implementation("com.google.android.gms:play-services-ads:22.2.0")
+    implementation(libs.play.services.auth)
+    implementation(libs.firebase.auth)
+    implementation(libs.firebase.ui.auth)
+    implementation(libs.play.services.ads)
     implementation("com.github.invissvenska:NumberPickerPreference:1.0.4")
     //implementation("com.google.android.play:app-update:2.1.0")
 }

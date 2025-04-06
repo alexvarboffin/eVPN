@@ -27,8 +27,8 @@ android {
 
     defaultConfig {
         applicationId "com.walhalla.admin"
-        minSdkVersion rootProject.minSdkVersion
-        targetSdkVersion rootProject.targetSdkVersion
+        minSdkVersion 21
+        targetSdkVersion 35
 
         versionCode version
         versionName "1.3" + version
